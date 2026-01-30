@@ -1,0 +1,186 @@
+body{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: grid;
+    grid-row: repeat(3, auto);
+    grid-template: "header",  /*define el tamaño total del margen para que se adapte automaticamente*/
+                    "main",
+                    "footer";
+    max-width: 1200px;
+}
+html {
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('proyecto-interiorismo-integral-1.jpg');
+    background-size: cover; /* Cubre toda la pantalla sin deformarse */
+    background-attachment: fixed; /* El fondo no se mueve al hacer scroll */
+    background-position: center;
+}
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 50px;
+    padding-right: 50px;  
+    font-size: 1.2 rem;
+}
+header h1 {
+    font-size: 50px;       /* Tamaño del nombre de la empresa */
+    font-weight: 900;     /* Hace la letra más gruesa */
+    margin-bottom: 5px;   /* Acerca el eslogan al título */
+    color: #000000;       
+}
+
+header p {
+    font-size: 20px;       
+    font-weight: 600;
+    
+}
+main h2{
+    color: red;
+    font-size: 30px;       
+    font-weight: 600;
+}
+main p {
+    color: #ffffff;
+    font-size: 18px;       
+    font-weight: 600;
+}
+
+.menu-principal {
+    background-color: red;
+    display: inline-flex;    /* Cambiar a flex para que 'gap' funcione */
+    padding: 15px 40px;
+    border-radius: 50px;
+    gap: 30px;               /* Esto separa las palabras (ajusta el número a tu gusto) */
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #060600;  /*linea finita envolbiendo paddin*/
+
+}
+.menu-principal a {
+    color: white;             
+    text-decoration: none;   /* QUITA EL SUBRAYADO */
+    font-weight: bold;
+    font-family: Arial, sans-serif; 
+    
+}
+
+.ventajas{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;   /*separacion entre kletras*/
+    
+}
+
+.ventajas article{ 
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), /*para resaltar letras blancas*/
+                url('tu-imagen.jpg');
+    background-size: cover;
+    color: white; 
+    padding: 0 20px 20px 20px;
+    line-height: 1.6;
+    font-size: 14px;
+    vertical-align: top;
+    border: 1px solid #eef2ff;
+    border-radius: 25px; 
+}
+
+.ventajas h3 {
+    color: red;
+    text-align:justify;
+    font-size: 18px;
+}
+
+.bloque-formulario, 
+.bloque-mapa {
+    width: 50%;          /* Divide la pantalla exactamente a la mitad */
+    padding: 8px;       /* Espacio interno para que el contenido no pegue a los bordes */
+    margin-right: 0px;
+}
+
+
+.bloque-mapa iframe {
+    width: 100%;
+    height: 100%;        /* El mapa crece según el contenedor */
+    min-height: 350px;
+    border-radius: 10px;
+}
+
+/* Estilo para que los campos del formulario ocupen su ancho asignado */
+.formulario-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: 100%; /* Estira el formulario al alto total de la columna */
+}
+
+.seccion-formulario {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 40px; /* Espacio entre el formulario y el mapa */
+}
+#mensaje {
+    flex-grow: 1; /* Hace que el textarea consuma todo el espacio sobrante */
+}
+.formulario-contacto input {
+    padding: 15px; /* esto hace mas grande a las cajitas del formulario */
+    
+}
+.titulo-formulario, 
+.bloque-mapa h3{
+    color: red;
+}
+.bloque-mapa p{
+    color: white;
+}
+.formulario-contacto input, 
+.formulario-contacto textarea {
+    background-color: #FFFFFF33; /* #FFFF es blanco | 33 es aproximadamente 20% de opacidad */
+    border: 1px solid #FFFFFF66; 
+    color: white; 
+    padding: 15px;
+    border-radius: 5px;
+    outline: none; /* Quita el borde azul por defecto al hacer clic */
+}
+.formulario-contacto input::placeholder,
+.formulario-contacto textarea::placeholder {
+    color: #DDDDDD; 
+}
+.boton {
+    background-color: #FF000066; /* Rojo transparente */
+    color: white;
+    border: 2px solid red; 
+    padding: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.boton:hover {
+    background-color: red; /* Se vuelve sólido al pasar el ratón */
+}
+.seccion-formulario label {
+    color: #FFFFFF;
+}
+/* Tablets y Móviles */
+@media (max-width: 850px) {
+    .ventajas, .seccion-formulario {
+        flex-direction: column; /* Pasa de horizontal a vertical */
+    }
+
+    .bloque-formulario, .bloque-mapa {
+        width: 100%; /* Ocupan todo el ancho en móvil */
+    }
+
+    header {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}
+
+
